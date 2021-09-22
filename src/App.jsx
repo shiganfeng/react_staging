@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
-import Search from './components/Search'
-import List from './components/List'
+import {Link, Route} from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
 import './App.css'
 
 export default class App extends Component {
-  //初始化
-  state = {
-    users: [],
-    isFirst: true, //是否为第一次打开页面
-    isLoading: false, //标识是否处于加载中
-    err: '', //存储请求相关的错误信息
-  }
-
-  saveUsers = (users)=>{
-    this.setState({users: users})
-  }
-  //更新App的state
-  updateAppState = (obj)=>{
-    this.setState(obj)
-  }
 
   render() {
     return (
-      <div className="container">
-        <Search updateAppState={this.updateAppState}/>
-        <List {...this.state}/>
+      <div>
+        <div className="row">
+          <div className="col-xs-offset-2 col-xs-8">
+            <div className="page-header"><h2>React Router Demo</h2></div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-2 col-xs-offset-2">
+            <div className="list-group">
+              {/* <a className="list-group-item" href="./about.html">About</a>
+              <a className="list-group-item active" href="./home.html">Home</a> */}
+                <Link className="list-group-item" to="/about">About</Link>
+                <Link className="list-group-item" to="/home">Home</Link>
+            </div>
+          </div>
+          <div className="col-xs-6">
+            <div className="panel">
+              <div className="panel-body">
+                {/* 注册路由 */}
+                  <Route path="/about" component={About} />
+                  <Route path="/home" component={Home} />   
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
