@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <!-- %PUBLIC_URL%代表public文件夹的路径-->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.css">
     <!-- 开启理想视口，用于做移动端网页的适配-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- 用于配置浏览器页签+地址栏颜色（仅支持安卓手机浏览器）-->
@@ -18,6 +18,12 @@
     <!-- 应用加壳时的配置文件
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
     <title>React</title>
+    <style>
+      .newActive {
+        background-color: orange !important;
+        color: #fff !important;
+      }
+    </style>
   </head>
   <body>
     <!--当网页不支持js环境时出现这个noscript标签-->
